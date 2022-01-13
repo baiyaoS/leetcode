@@ -4,9 +4,14 @@
             "name": "Win32",
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "includePath": [
-                "C:/MinGW/lib",
+                "${workspaceRoot}",
                 "C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++",
-                "${workspaceFolder}/**"
+                "C:/MinGW/lib/gcc/mingw32/6.3.0/include/ssp",
+                "C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32",
+                "C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/backward",
+                "C:/MinGW/lib/gcc/mingw32/6.3.0/include",
+                "C:/MinGW/include",
+                "C:/MinGW/lib/gcc/mingw32/6.3.0/include-fixed"
             ],
             "defines": [
                 "_DEBUG",
@@ -15,8 +20,13 @@
             ],
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-gcc-x64"
-       }
+            "intelliSenseMode": "gcc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceRoot}"
+                ]
+            }
+        }
     ],
     "version": 4
 }
