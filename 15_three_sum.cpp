@@ -1,6 +1,7 @@
-// 蛮力法  对于每个i、j，查找合适的k，直到i+j+k=0。   -- O(n^3)
+// 蛮力法  对于每个i、j，查找合适的k，将所有i+j+k=0加入ret。   -- O(n^3)
 
-#include <iostream>
+#include <iostream>  // cout
+#include <algorithm> // sort unique
 #include <vector>
 using namespace std;
 
@@ -12,39 +13,29 @@ public:
             for(int j=i+1;j<nums.size();++j){
                 for(int k=j+1;k<nums.size();++k){
                     if(nums[i]+nums[j]+nums[k]==0){
-                        return vector<int> {i,j};
+                        vector<int> triplet = {nums[i], nums[j], nums[k]};
+                        sort(triplet.begin(),triplet.end());
+                        ret.push_back(triplet);
                     }
                 }
             }
         }
+        // 先排序，再删除
+        sort(ret.begin(),ret.end());
+        ret.erase(unique(ret.begin(),ret.end()),ret.end());
+        // 返回值
         return ret;
     }
 };
-
-
-                    if (nums[i] + nums[j] + nums[k] == 0) {
-                        List < Integer > triplet = new ArrayList < Integer > ();
-                        triplet.add(nums[i]);
-                        triplet.add(nums[j]);
-                        triplet.add(nums[k]);
-                        Collections.sort(triplet);
-                        result.add(triplet);
-                    }
-                }
-            }
-        }
-        result = new ArrayList < List < Integer >> (new LinkedHashSet < List < Integer >> (result));
-        return result;
-
-
-
 
 int main(){
     Solution g;
     vector<int> nums =  {-1,0,1,2,-1,-4};
     // vector<int> nums =  {0};
 
-    vector<int> ret = g.threeSum(nums);
-    cout<<ret[0]<<","<<ret[1]<<endl;
+    vector<vector<int>> ret = g.threeSum(nums);
+    for(int i=0;i<ret.size();++i){
+        cout<<ret[i][0]<<","<<ret[i][1]<<","<<ret[i][2]<<endl;
+    }
     return 0;
 }
