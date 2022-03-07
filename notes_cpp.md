@@ -5,6 +5,7 @@
 如果要用，记得添加：
 #include <iostream>  // cout
 #include <algorithm> // sort,  (unique,erase,)
+#include <map> //hashmap 字典
 
 ## 标准库
 1.sort 
@@ -30,3 +31,12 @@ vector<int> c={1,2,3,4,5,6,7};   //初始值直接赋值
 vector<int> d(b);                //从另一个vector
 
 3.添加
+
+## map
+用于构造哈希表
+#include <map>
+map<int, int> map;
+if (map.find(a)!=map.end()) {
+    return vector<int> { map[a], i };
+}
+

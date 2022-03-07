@@ -1,5 +1,7 @@
 // 蛮力法  对于每个i、j，查找合适的k，将所有i+j+k=0加入ret。   -- O(n^3)
 
+// 在数量大的时候会超时。
+
 #include <iostream>  // cout
 #include <algorithm> // sort unique
 #include <vector>
