@@ -1,6 +1,9 @@
 # c++刷题中常用的操作
 部分操作需要支持c++11新特性
 
+## 其他 
+auto 是可推断类型
+
 ## 头文件
 如果要用，记得添加：
 #include <iostream>  // cout
@@ -32,7 +35,7 @@ vector<int> d(b);                //从另一个vector
 
 3.添加
 
-## map
+## map & set
 用于构造哈希表
 #include <map>
 map<int, int> map;
@@ -44,6 +47,16 @@ if (map.find(a)!=map.end()) {                                      //查找key
     return vector<int> { map[a], i };
 }
 
+### 遍历set
+auto word=col.cbegin();
+while (word != col.cend()){
+    cout << *word << ',';
+    ++word;
+}
+cout << endl;
+
+
+
 ## 字符串
 
 数字字符串
@@ -54,3 +67,7 @@ if (map.find(a)!=map.end()) {                                      //查找key
 
 字符串切片
 s.substr(begin, end)
+
+## 二维数组
+麻烦死了：
+vector<vector<bool>> nine(9, vector<bool>(9));
